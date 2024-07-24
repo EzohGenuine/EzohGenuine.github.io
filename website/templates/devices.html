@@ -1,0 +1,78 @@
+{% extends "home.html" %} {% block title %} IP Devices {% endblock %}
+
+{% block content%}
+
+  </style>
+    <h3 align="">IP Devices Status</h3>
+    <div align="left">
+        <Label class="btn btn-primary">Add Ip Device to Check it Status</Label>
+    </div>
+    <form action="" method="POST">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                  <th>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="ipAddress" name="ipAddress" placeholder="Enter IP addrress">
+                    </div>
+                  </th>
+                  <th>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="ipName" name="ipName" placeholder="Enter IP Device Name">
+                    </div>
+                  </th>
+                  <th>
+                    <button type="submit" class=" form-control btn btn-primary">Add</button>
+                  </th>
+                </tr>
+                </thead>
+        </table>
+        
+    </form>
+        
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                  <th>IP Address</th>
+                  <th>Hostname</th>
+                  <th>User</th>
+                  <th>Status</th>
+                  <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+                {% for ip in data_ip %}
+                <tr>
+                    <th>{{ ip.ipaddress }}</th>
+                    <th></th>
+                    <th>{{ ip.ipname }}</th>
+                    <th>
+                      {% if status %}
+                      <i class="bi bi-patch-check" style="color: rgb(39, 201, 18);"><span>Online</span></i>
+                      {%else%}
+                      <i class="bi bi-exclamation-triangle-fill" style="color: rgb(210, 10, 10);"><span>Oflline</span></i>
+                      {%endif%}
+                    </th>
+                    <th>
+                        <i class="bi bi-pen" onclick="edit_ip_device({{ ip.id }})" style="color: rgb(39, 201, 18); cursor: pointer;"></i>
+                    </th>
+                    <th>
+                        <i class="bi bi-trash" onclick="delete_ip_device({{ ip.id }})" style="color: rgb(210, 10, 10); cursor: pointer;"></i>
+                    </th>
+                      
+                </tr>
+                {% endfor %}
+                
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>IP Address</th>
+                    <th>Hostname</th>
+                    <th>User</th>
+                    <th>Status</th>
+                    <th colspan="2" align="center">Action</th>
+                  </tr>
+            </tfoot>
+        </table>
+        
+    
+{% endblock %}

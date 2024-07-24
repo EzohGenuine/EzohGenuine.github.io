@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link 
+        rel="stylesheet" 
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
+    />
+    <title>{% block title %} Home {% endblock %}</title>
+    
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                    <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                        <span class="fs-5 d-none d-sm-inline">Menu</span>
+                    </a>
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                        <li class="nav-item">
+                            <a href="/" class="nav-link align-middle px-0">
+                                <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="/ipDevices" class="nav-link px-0 align-middle">
+                                <i class="bi bi-reception-3"></i> <span class="ms-1 d-none d-sm-inline">IP Devices status</span></a>
+                        </li>
+                        <li>
+                            <a href="/serverConnection" class="nav-link px-0 align-middle">
+                                <i class="bi bi-reception-3"></i> <span class="ms-1 d-none d-sm-inline">Server Connectivity</span></a>
+                        </li>
+                        <li>
+                            <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Routing</span> </a>
+                            <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+                                <li class="w-100">
+                                    <a href="#" class="nav-link px-0"><i class="bi bi-send-arrow-down"></i> <span class="d-none d-sm-inline">Packet Transmition</span>  </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"> <i class="bi bi-sign-turn-right-fill"></i><span class="d-none d-sm-inline">Route tracer</span> </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"><i class="bi bi-link"></i> <span class="d-none d-sm-inline">Socket</span> </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"><i class="bi bi-terminal-fill"></i> <span class="d-none d-sm-inline">Ports</span> </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"><i class="bi bi-terminal-fill"></i> <span class="d-none d-sm-inline">CLI</span> </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                                <i class="bi bi-hdd-network-fill"></i> <span class="ms-1 d-none d-sm-inline">Networking</span> </a>
+                                <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
+                                <li class="w-100">
+                                    <a href="/note" class="nav-link px-0"><i class="bi bi-table"></i> <span class="d-none d-sm-inline">Net-tables</span> </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"> <i class="bi bi-cone-striped"></i> <span class="d-none d-sm-inline">Net-Blocks</span> </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"> <i class="bi bi-ethernet"></i><span class="d-none d-sm-inline">Net-Structure</span> </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"> <i class="bi bi-gear-wide-connected"></i> <span class="d-none d-sm-inline">Net-Shell</span> </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            
+                            <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+                                <i class="bi bi-pc-display"></i> <span class="ms-1 d-none d-sm-inline">My devices</span></a>
+                            <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+                                <li class="w-100">
+                                    <a href="#" class="nav-link px-0"> <i class="bi bi-router"></i> <span class="d-none d-sm-inline">Routers</span> </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"> <i class="bi bi-laptop"></i><span class="d-none d-sm-inline">Laptops</span> </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"> <i class="bi bi-pc-display-horizontal"></i> <span class="d-none d-sm-inline">Desktops</span> </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"><i class="bi bi-telephone-outbound"></i> <span class="d-none d-sm-inline">Land Line phones</span> </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"><i class="bi bi-printer"></i> <span class="d-none d-sm-inline">Printers</span> </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"> <i class="bi bi-fingerprint"></i> <span class="d-none d-sm-inline">Biometrics AP</span> </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"> <i class="bi bi-database-fill"></i><span class="d-none d-sm-inline">Servers</span> </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link px-0 align-middle">
+                                <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Net-Graphs</span> </a>
+                        </li>
+                    </ul>
+                    <hr>
+                    <div class="dropdown pb-4">
+                        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
+                            <span class="d-none d-sm-inline mx-1">{{ user.first_name }}</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                            <li><a class="dropdown-item" href="#">New project...</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="/logout">Sign out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col py-3">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                        {% if category =='error' %}
+                            <div class="alert alert-danger alter-dismissable fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="close" data-dismiss="alert">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                        {% else %}
+                            <div class="alert alert-success alter-dismissable fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="close" data-dismiss="alert">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                        {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+
+                <div class="container">
+                    {% block content%}
+
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script 
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
+        crossorigin="anonymous">
+    </script>
+    <script 
+      type="text/javascript" 
+      src="{{ url_for('static', filename='index.js')  }}">
+
+    </script>
+</body>
+</html>

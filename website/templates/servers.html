@@ -1,0 +1,82 @@
+{% extends "home.html" %} {% block title %} IP Devices {% endblock %}
+
+{% block content%}
+
+
+    <h3 align="">Server Connections</h3>
+    
+    <div>
+      <div class="alert alert-success alter-dismissable fade show" role="alert">
+       <p>The basic ideology of this script is to give real-time information about if the system the script is being run on is connected to an internet connection or not, and save that information into a log file simultaneously, keeping records of when the system was connected to the internet when it was disconnected and the time duration it was disconnected for.
+      
+          <button type="button" class="close" data-dismiss="alert">
+            <span aria-hidden="true" style="color: rgb(237, 19, 19);">&times;</span>
+          </button>
+        </p>
+      </div>
+    </div>
+    <div>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+             <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+          <div class="navbar-nav">
+            <a class="nav-item btn nav-link" id="bn" href="/google_server">Google |</a>
+            <a class="nav-item nav-link" id="logout" href="/Microsoft365">Microsoft365 |</a>
+            <a class="nav-item nav-link" id="login" href="/TZ GTWY">TZ GTWY |</a>
+            <a class="nav-item nav-link" id="sign-up" href="/PBXK">PBXK</a>
+          </div>
+        </div>
+    </nav> <br>
+    </div>
+    <form action="" method="POST">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                  <th>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="serverIP" name="serverIP" placeholder="Enter Server IP">
+                    </div>
+                  </th>
+                  <th>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="serverNAME" name="serverNAME" placeholder="Enter Server Name">
+                    </div>
+                  </th>
+                  <th>
+                    <button type="submit" class=" form-control btn btn-primary">Check</button>
+                  </th>
+                </tr>
+                </thead>
+        </table>
+        
+    </form>
+        
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                  <th>Server IP : 8.8.8.8</th>
+                  <th>Hostname : Google </th>
+                  <th> Status | <b class="bi bi-patch-check" style="color: rgb(39, 201, 18);"><span>Up</span></b>
+                     
+                                <b class="bi bi-exclamation-triangle-fill" style="color: rgb(210, 10, 10);"><span>Down</span></b>
+                  </th>
+                  <th >Action | <i class="bi bi-pen" onclick="edit_ip_device()" style="color: rgb(39, 201, 18); cursor: pointer;"></i> |
+                     
+                    <i class="bi bi-trash" onclick="delete_ip_device()" style="color: rgb(210, 10, 10); cursor: pointer;"></i>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th colspan="4">{% with filee = file %}
+                    {{filee.readline()}}
+                    {%endwith%}
+                  </th>
+                </tr>
+            </tbody>
+        </table>
+        
+    
+{% endblock %}
